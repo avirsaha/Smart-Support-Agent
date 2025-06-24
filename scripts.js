@@ -73,7 +73,7 @@ sendBtn.addEventListener("click", async () => {
     }
   } catch (err) {
     removeTypingIndicator();
-    appendMessage("❌ Error connecting to Rasa server", "bot");
+    appendMessage("❌ ERROR connecting to server!\n Bot maybe offline", "bot");
     console.error(err);
   }
 });
