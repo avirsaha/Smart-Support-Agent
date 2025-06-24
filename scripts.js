@@ -2,7 +2,7 @@ const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 
-const RASA_ENDPOINT = "http://localhost:5005/webhooks/rest/webhook";
+const RASA_ENDPOINT = "https://8c4f-103-218-171-102.ngrok-free.app/webhooks/rest/webhook";
 
 function appendMessage(content, sender = "user") {
   const wrapper = document.createElement("div");
