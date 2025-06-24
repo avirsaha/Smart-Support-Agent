@@ -49,31 +49,30 @@ responses:
   utter_ask_contact_info:
     - text: "Could you please provide your name, email, and phone number?"
 
-forms:
-  lead_form:
-    required_slots:
-      name:
-        - type: from_text
-      email:
-        - type: from_text
-      phone:
-        - type: from_text
-
 slots:
   name:
     type: text
-    influence_conversation: false
+    mappings:
+      - type: from_text
   email:
     type: text
-    influence_conversation: false
+    mappings:
+      - type: from_text
   phone:
     type: text
-    influence_conversation: false
+    mappings:
+      - type: from_text
+
+forms:
+  lead_form:
+    required_slots:
+      - name
+      - email
+      - phone
 
 actions:
   - validate_lead_form
   - submit_lead_form
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

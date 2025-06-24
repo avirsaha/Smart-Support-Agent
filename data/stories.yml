@@ -29,8 +29,6 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-
-stories:
 - story: greet and ask return policy
   steps:
     - intent: greet
