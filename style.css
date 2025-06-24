@@ -9,8 +9,7 @@ body {
   height: 100vh;
 }
 .status {
-  font-size: 10px;
-  padding-top: 30px;
+  font-size: 15px;
   color: lightblue;
 }
 .status.online {
