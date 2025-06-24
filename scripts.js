@@ -83,3 +83,31 @@ userInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") sendBtn.click();
 });
 
+const RASA_STATUS_ENDPOINT = "http://localhost:5005/status";
+
+async function checkRasaStatus() {
+  const statusDiv = document.querySelector('.status');
+
+  try {
+    const response = await fetch(RASA_STATUS_ENDPOINT);
+    if (response.ok) {
+      statusDiv.textContent = 'Online';
+      statusDiv.classList.add('online');
+      statusDiv.classList.remove('offline');
+    } else {
+      statusDiv.textContent = 'Offline';
+      statusDiv.classList.add('offline');
+      statusDiv.classList.remove('online');
+    }
+  } catch {
+    statusDiv.textContent = 'Offline';
+    statusDiv.classList.add('offline');
+    statusDiv.classList.remove('online');
+  }
+}
+
+window.addEventListener("load", () => {
+  checkRasaStatus();
+  setInterval(checkRasaStatus, 30000);
+});
+

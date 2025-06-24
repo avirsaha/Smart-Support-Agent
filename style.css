@@ -10,9 +10,17 @@ body {
 }
 .status {
   font-size: 10px;
-  padding top: 30px;
+  padding-top: 30px;
   color: lightblue;
 }
+.status.online {
+  color:lightblue;
+}
+
+.status.offline {
+  color: #f44336; /* red */
+}
+
 .chat-container {
   width: 100%;
   max-width: 600px;
