@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.status {
+  font-size: 10px;
+  padding top: 30px;
+  color: lightblue;
+}
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #2b2b2b;
+}
+ .disclaimer {
+    background-color: #3a3a3a;
+    color: #ccc;
+    font-size: 12px;
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+  .chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #333;
+}
+
+.chat-header-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #4e8cff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.chat-header-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.timestamp {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 4px;
+  text-align: right;
+}
+.verified-badge {
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.input-bar {
+  display: flex;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-top: 1px solid #333;
+}
+
+.input-bar input {
+  flex: 1;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-bar button {
+  background-color: #4e8cff;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message {
+  max-width: 80%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #4e8cff;
+  color: white;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #444;
+  color: white;
+}
+
+.typing {
+  font-style: italic;
+  color: #aaa;
+  padding-left: 10px;
+}
+.typing-dots span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background-color: #aaa;
+  animation: blink 1.4s infinite;
+  position: relative;
+  top: 2px;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
