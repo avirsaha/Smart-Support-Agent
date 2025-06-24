@@ -83,7 +83,7 @@ userInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") sendBtn.click();
 });
 
-const RASA_STATUS_ENDPOINT = "http://localhost:5005/status";
+const RASA_STATUS_ENDPOINT = "https://8c4f-103-218-171-102.ngrok-free.app/status";
 
 async function checkRasaStatus() {
   const statusDiv = document.querySelector('.status');
