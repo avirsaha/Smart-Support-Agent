@@ -8,10 +8,15 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_return_policy
+  - track_order
+  - product_inquiry
+  - ask_discount
+  - provide_contact_info
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hello, how can I help you today?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -28,6 +33,46 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_return_policy:
+    - text: "Our return policy allows returns within 30 days of purchase with the original receipt."
+
+  utter_track_order:
+    - text: "Can you please provide your order ID to help me track it?"
+
+  utter_ask_product:
+    - text: "Sure, which product would you like to know more about?"
+
+  utter_ask_discount:
+    - text: "Yes, we currently offer discounts on selected items. Let me check for you."
+
+  utter_ask_contact_info:
+    - text: "Could you please provide your name, email, and phone number?"
+
+forms:
+  lead_form:
+    required_slots:
+      name:
+        - type: from_text
+      email:
+        - type: from_text
+      phone:
+        - type: from_text
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  phone:
+    type: text
+    influence_conversation: false
+
+actions:
+  - validate_lead_form
+  - submit_lead_form
 
 session_config:
   session_expiration_time: 60

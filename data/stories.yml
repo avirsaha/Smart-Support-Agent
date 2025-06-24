@@ -28,3 +28,21 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+
+stories:
+- story: greet and ask return policy
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_return_policy
+    - action: utter_return_policy
+
+- story: product inquiry and collect lead
+  steps:
+    - intent: product_inquiry
+    - action: utter_ask_product
+    - action: lead_form
+    - active_loop: lead_form
+    - active_loop: null
+    - action: submit_lead_form
