@@ -116,15 +116,19 @@ window.addEventListener('DOMContentLoaded', () => {
   const startMsg = document.createElement('div');
   startMsg.className = 'bot-message start-message';
   startMsg.innerHTML = `
-    <strong>👋 Welcome!</strong><br />
-    You're chatting with a demo AI agent for a fictional e-commerce brand.<br /><br />
-    This bot is part of my freelancing work — need a custom NLP bot for your business?<br /><br />
-    👉 <a href="https://www.fiverr.com/yourprofile" target="_blank">Fiverr</a> | 
-    <a href="https://www.upwork.com/freelancers/~yourprofile" target="_blank">Upwork</a><br />
-    🔧 <a href="https://github.com/yourgithub" target="_blank">GitHub</a><br /><br />
-    💬 Type a message to get started.
-  ` 
-  
+<h1 style="margin: 0 0 10px 0; font-size: 30px; text-align: left;"><strong>👋 Welcome!</strong></h1>
+This is a demo AI agent for a fictional e-commerce brand.<br><br>
+
+Need a AI chatbot like this for your business?<br>
+Hire me on 👉 <a href="" target="_blank">Fiverr</a> | <a href="" target="_blank">Upwork</a><br><br>
+
+📂 Features & custom options: <a href="https://github.com/avirsaha/smart-agent/" target="_blank">GitHub</a><br>
+🤖 Works with WhatsApp, Insta, Telegram, Slack, Discord & more.<br>
+💻 Easy to integrate into any site or app.<br><br>
+📧 <a href="mailto:aviraj.saha@outlook.com">aviraj.saha@outlook.com</a><br>
+📞 <a href="tel:+918335827412">+91 83358 27412</a><br><br>
+💬 Type a message to get started.
+` 
   chatBox.appendChild(startMsg);
 });
 
