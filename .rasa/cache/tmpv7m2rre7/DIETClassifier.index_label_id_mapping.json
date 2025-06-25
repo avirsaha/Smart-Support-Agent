@@ -1,0 +1,15 @@
+{
+  "0": "affirm",
+  "1": "ask_discount",
+  "2": "ask_return_policy",
+  "3": "bot_challenge",
+  "4": "chitchat",
+  "5": "deny",
+  "6": "goodbye",
+  "7": "greet",
+  "8": "mood_great",
+  "9": "mood_unhappy",
+  "10": "product_inquiry",
+  "11": "provide_contact_info",
+  "12": "track_order"
+}

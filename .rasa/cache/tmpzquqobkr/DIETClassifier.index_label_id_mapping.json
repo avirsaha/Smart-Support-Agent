@@ -1,0 +1,17 @@
+{
+  "0": "affirm",
+  "1": "ask_email",
+  "2": "ask_name",
+  "3": "ask_phone",
+  "4": "bot_challenge",
+  "5": "chitchat",
+  "6": "deny",
+  "7": "faq",
+  "8": "goodbye",
+  "9": "greet",
+  "10": "mood_great",
+  "11": "mood_unhappy",
+  "12": "out_of_scope",
+  "13": "provide_info",
+  "14": "submit"
+}
