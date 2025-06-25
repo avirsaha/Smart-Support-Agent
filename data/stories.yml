@@ -2,45 +2,77 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: greet and ask name
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: ask_name
+  - action: utter_ask_name
 
-- story: sad path 1
+- story: goodbye
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
 
-- story: greet and ask return policy
+- story: lead generation via form
   steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_return_policy
-    - action: utter_return_policy
+  - intent: provide_info
+  - action: lead_form
+  - active_loop: lead_form
 
-- story: product inquiry and collect lead
+- story: lead form submission
   steps:
-    - intent: product_inquiry
-    - action: utter_ask_product
-    - action: lead_form
-    - active_loop: lead_form
-    - active_loop: null
-    - action: submit_lead_form
+  - action: lead_form
+  - active_loop: null
+  - action: submit_lead_form
+
+- story: handle non-English input
+  steps:
+  - intent: out_of_scope/non_english
+  - action: utter_out_of_scope/non_english
+
+- story: handle irrelevant queries
+  steps:
+  - intent: out_of_scope/other
+  - action: utter_out_of_scope/other
+
+- story: answer NLU FAQ
+  steps:
+  - intent: faq/nlu
+  - action: utter_faq/nlu
+
+- story: answer Rasa Components FAQ
+  steps:
+  - intent: faq/rasa_components
+  - action: utter_faq/rasa_components
+
+- story: answer programming required FAQ
+  steps:
+  - intent: faq/is_programming_required
+  - action: utter_faq/is_programming_required
+
+- story: chitchat about time
+  steps:
+  - intent: chitchat/ask_time
+  - action: utter_chitchat/ask_time
+
+- story: chitchat joke
+  steps:
+  - intent: chitchat/telljoke
+  - action: utter_chitchat/telljoke
+
+- story: chitchat bot origin
+  steps:
+  - intent: chitchat/ask_wherefrom
+  - action: utter_chitchat/ask_wherefrom
+
+- story: chitchat bot identity
+  steps:
+  - intent: chitchat/ask_isbot
+  - action: utter_chitchat/ask_isbot
+
+- story: handle fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+

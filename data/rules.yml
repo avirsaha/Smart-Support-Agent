@@ -2,22 +2,53 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: greet the user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: say goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: ask for name
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: ask_name
+  - action: utter_ask_name
 
-- rule: Handle Fallback Gracefully
+- rule: ask for email
   steps:
-    - intent: nlu_fallback
-    - action: utter_fallback
+  - intent: ask_email
+  - action: utter_ask_email
 
-responses:
-  utter_fallback:
-    - text: "I didn’t quite catch that. Could you rephrase or ask it differently?"
+- rule: ask for phone
+  steps:
+  - intent: ask_phone
+  - action: utter_ask_phone
+
+- rule: submit user information
+  steps:
+  - intent: submit
+  - action: utter_submit
+
+- rule: activate lead form
+  steps:
+  - intent: provide_info
+  - action: lead_form
+  - active_loop: lead_form
+
+- rule: submit lead form
+  steps:
+  - active_loop: lead_form
+  - action: lead_form
+  - active_loop: null
+  - action: submit_lead_form
+
+- rule: handle unexpected input
+  condition:
+  - active_loop: null
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
 

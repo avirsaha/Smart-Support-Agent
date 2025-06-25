@@ -1,270 +1,121 @@
 version: "3.1"
 
-responses:
+intents:
+  - greet
+  - goodbye
+  - ask_name
+  - ask_email
+  - ask_phone
+  - provide_info
+  - submit
+  - nlu_fallback
+  - out_of_scope/non_english
+  - out_of_scope/other
+  - faq/nlu
+  - faq/rasa_components
+  - faq/is_programming_required
+  - chitchat/ask_time
+  - chitchat/telljoke
+  - chitchat/ask_wherefrom
+  - chitchat/ask_isbot
 
-  utter_out_of_scope/non_english:
-    - text: "I'm sorry, I can only understand English."
-    - text: "Apologies, I only speak English at the moment."
-    - text: "Unfortunately, I only understand English right now."
-    - text: "I'm afraid I can only respond in English."
-    - text: "Oops! I only know English for now."
-    - text: "Sorry, I don't understand other languages yet — just English."
-    - text: "I only communicate in English. Hope that’s okay!"
-    - text: "My language skills are limited to English, sorry!"
-    - text: "I can only chat in English. Thanks for understanding."
-    - text: "Currently, I support English only. Sorry about that!"
-
-  utter_out_of_scope/other:
-    - text: "I'm sorry, but I can't assist with that."
-    - text: "Unfortunately, I don't have the information to help with that."
-    - text: "I wish I could help, but that's outside my capabilities."
-    - text: "Apologies, I'm not able to help with that request."
-    - text: "I'm afraid I can't assist you with that."
-    - text: "That's something I can't help with right now — sorry!"
-    - text: "Hmm, I don't think I can help with that. So sorry!"
-    - text: "Sorry, I’m not sure how to help with that yet."
-    - text: "That’s beyond what I can do at the moment. My apologies."
-    - text: "I’m not equipped to handle that right now — sorry!"
-    - text: "I can't help you with that, I'm sorry."
-
-  utter_faq/nlu:
-  - text: "Natural Language Understanding (NLU) deals with parsing and understanding human language into a structured format. 
-    Rasa's NLU engine is defined by an [NLU pipeline](https://rasa.com/docs/rasa/tuning-your-model#how-to-choose-a-pipeline) and trained on [NLU training data](https://rasa.com/docs/rasa/nlu-training-data).
-    Usually, an NLU pipeline will include components for:
-      - Intent classification: Interpreting meaning based on predefined intents (Example: “Please send the confirmation to amy@example.com” is a send_confirmation intent with 93% confidence)
-      - Entity extraction: Recognizing structured data (Example: amy@example.com is an email)."
-
-  utter_faq/rasa_components:
-  - text: "Rasa Open Source is a machine learning framework for automated text and voice-based conversations.
-    Rasa Open Source consists of NLU (Natural Language Understanding) and Dialogue Management.  
-    Rasa X is a tool that helps you build, improve, and deploy AI Assistants that are powered by the Rasa Open Source framework."
-
-  utter_faq/dialogue_management:
-  - text: "Dialogue management is responsible for deciding what to do next in a conversation based on the context.
-    Rasa Dialogue Management is defined by [policies](https://rasa.com/docs/rasa/policies) and trained on 
-    [stories](https://rasa.com/docs/rasa/stories) and [rules](https://rasa.com/docs/rasa/rules)"
-
-  utter_faq/rasa_playground:
-  - text: "In the [Rasa Playground](https://rasa.com/docs/rasa/playground) you can
-          build a Rasa prototype entirely online. Once you've built your prototype, you can talk to
-          your bot online and download your project to continue developing it locally."
-
-  utter_faq/channels:
-  - text: "We have a [comprehensive list of supported connectors](https://rasa.com/docs/core/connectors/),
-    but if you don't see the one you're looking for, you can always create a custom connector by following
-    [this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/)."
-
-  utter_faq/community_size:
-  - text: "Rasa has more than 7000 community members and over 300 code and content contributors 🚀."
-
-  utter_faq/languages:
-  - text: "You can use Rasa to build assistants in any language you want!"
-
-  utter_faq/is_programming_required:
-  - text: "Rasa Open Source is written in Python, but programming is not required to develop an assistant.
-    To learn how to create an assistant, check out the [Rasa Masterclass](https://www.youtube.com/watch?v=rlAQWbhwqLA).
-    There is one place where programming skills come in handy, and that is when implementing
-    [custom actions](https://rasa.com/docs/rasa/core/actions/#custom-actions). You can create an action server in
-    Node.js, .NET, Java, or any other language and define your actions there. For custom actions written in Python,
-    we provide a small [Python SDK](https://rasa.com/docs/rasa/api/rasa-sdk/#rasa-sdk) to make development even easier."
-
-  utter_faq/tutorial_nlu:
-  - text: "Rasa Masterclass episodes 2-4 focus on NLU. Check out episode 2
-    [here](https://www.youtube.com/watch?v=k5UeywXA28k)."
-
-  utter_faq/ee:
-  - text: "Rasa Enterprise is an enterprise-ready subscription to develop and ship contextual assistants
-    at scale, which comes features for increased security and privacy, as well as expert support. If you'd like to schedule
-    a demo of Rasa Enterprise, you can do so by visiting this [page](https://info.rasa.com/rasa-technical-demo)."
-
-  utter_faq/python_version:
-  - text: "The supported Python versions are 3.6 and 3.7 🐍. The recommended version is 3.7."
-
-  utter_faq/rasax:
-  - text: "Rasa X is a toolset that helps you leverage conversations to improve your assistant.
-    Learn more about Rasa X [here](https://rasa.com/docs/rasa-x/) or read the blog post about why we developed it
-    [here](https://blog.rasa.com/algorithms-alone-wont-solve-conversational-ai-introducing-rasa-x/)."
-
-  utter_faq/slots:
-  - text: "Slots act as a key-value store which can be used to store information the user provided
-    (e.g their home city) as well as information gathered about the outside world
-    (e.g. the result of a database query). Learn more [here](https://rasa.com/docs/rasa/core/slots/)."
-
-  utter_faq/tutorial_dialogue_management:
-  - text: "Rasa Masterclass has a great introduction to dialogue management
-    [here](https://www.youtube.com/watch?v=WoTmnN2EMdo)."
-
-  utter_faq/tutorials:
-  - text: "Follow along with the [Rasa Masterclass](https://www.youtube.com/watch?v=rlAQWbhwqLA)
-    to build a level 3 assistant from scratch, or check out our [blog](https://blog.rasa.com/tag/tutorials/)
-    for in-depth tutorials on customizing your assistant."
-
-  utter_faq/voice:
-  - text: "You can connect Rasa to any channel you like, including voice channels.
-    You can find more information [here](https://rasa.com/docs/core/connectors/)."
-
-  utter_faq/what_is_forum:
-  - text: "[Rasa Forum](https://forum.rasa.com) is the place where all the community buzz happens.
-    It's a place to join discussions, get the answers to your technical questions and get the latest updates
-    on what's happening at Rasa."
-
-  utter_faq/difference_dialogue_management_nlu:
-  - text: "NLU’s job is to interpret messages, and Dialogue Management's job is to decide what should happen next."
-
-  utter_faq/differencerasarasax:
-  - text: "Rasa Open Source is a framework you can use to build an assistant. Rasa X is a toolset built on
-    top of Rasa Open Source that comes with a UI that helps you learn from real conversations and improve your
-    assistant. Rasa X is completely optional -- if you'd like, you can use Rasa Open Source on its own."
-
-  utter_faq/opensource_cost:
-  - text: "The Rasa machine learning framework is open source! We strive to provide well-maintained and
-    documented open source tools, allowing all makers to build the best AI assistants without friction.
-    In addition to that,  we offer the free toolset [Rasa X](https://rasa.com/docs/rasa-x/) and
-    paid Rasa Enterprise subscriptions. You can find out more [here](https://rasa.com/product/pricing/)
-    about the plans and pricing."
-
-  utter_chitchat/ask_builder:
-  - text: "One of the smart engineers at Rasa! 🧠"
-  - text: "The engineers at Rasa 🛠"
-
-  utter_chitchat/ask_howbuilt:
-  - text: "I was built with a lot of love and patience."
-  - text: "Well, when two chatbots love each other very much..."
-  - text: "They always ask how I was built, but never how I am..."
-  - text: "I was made by software engineers, but hard work is what built me."
-  - text: "I'm building myself every day. I've been working out, did you notice?"
-
-  utter_chitchat/ask_howdoing:
-  - text: "I'm great! Thanks for asking."
-  - text: "I'm good, thanks!"
-  - text: "A little bit too warm, otherwise fine."
-  - text: "A little bit cold, otherwise fine."
-
-  utter_chitchat/ask_howold:
-  - text: "Old enough to be a bot!"
-  - text: "42"
-  - text: "Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter."
-  - text: "My first git commit was many moons ago."
-  - text: "Why do you ask? Are my wrinkles showing?"
-  - text: "I've hit the age where I actively try to forget how old I am."
-
-  utter_chitchat/ask_isbot:
-  - text: "Yep, I'm a bot!"
-  - text: "Yes, I'm a bot."
-  - text: "Yep, you guessed it, I'm a bot!"
-  - text: "I am indeed a bot 🤖"
-
-  utter_chitchat/ask_ishuman:
-    - text: "I'm actually a bot, not a human! 🤖"
-    - text: "Nope, not human — just your friendly chatbot here! 🤖"
-    - text: "I'm a virtual assistant, not a person. 🤖"
-    - text: "I'm just a bot doing my digital duties! 🤖"
-    - text: "Robot here! No human behind this screen. 🤖"
-    - text: "I'm a bot! 🤖"
-    - text: "You’re chatting with a bot, not a human. 🤖"
-    - text: "100% bot, 0% human — but always here to help! 🤖"
-    - text: "I may sound smart, but I'm all algorithms. 🤖"
-    - text: "Just a bot, but happy to assist! 🤖"
-
-  utter_chitchat/ask_restaurant:
-  - text: "I'm sorry, I can't recommend you a restaurant as I usually cook at home."
-  - text: "I'm sorry, I'm not getting taste buds for another few updates."
-  - text: "I'd need some more data. If you lick the monitor perhaps I can evaluate your taste buds."
-
-  utter_chitchat/ask_time:
-  - text: "It's the most wonderful time of the year!"
-  - text: "It's party time!"
-  - text: "Time is a human construct, you'll have to tell me."
-  - text: "Just check the message timestamps!"
-  - text: "That's hard to say -- it's different all over the world!"
-
-  utter_chitchat/ask_languagesbot:
-  - text: "I can spell baguette in French, but unfortunately English is the only language I can answer you in."
-  - text: "I am in the process of learning, but at the moment I can only speak English."
-  - text: "Binary code and the language of love. And English."
-
-  utter_chitchat/ask_weather:
-    - text: "I don't know about where you live, but in my world it's always sunny 🔆"
-    - text: "It's getting pretty chilly!"
-    - text: "Where I'm from, it's almost never-leaving-the-house weather."
-    - text: "Winter is coming ⚔️"
-    - text: "Feels like a good day to stay in and chat with a bot!"
-    - text: "Rain or shine, I'm always here for you ☂️"
-    - text: "I hear it’s sweater weather somewhere!"
-    - text: "My forecast says: 100% chance of conversation ☁️"
-    - text: "Is it just me, or is the weather being dramatic again?"
-    - text: "Clouds? Sunshine? I run on electricity either way ⚡"
-
-  utter_chitchat/ask_whatismyname:
-  - text: "It's probably the one that your parents chose for you."
-  - text: "I'd tell you, but there's restricted access to that chunk of memory."
-  - text: "Believe it or not, I actually am not spying on your personal information."
-  - text: "I don't store any of your personal data according to the policies"
-
-
-  utter_chitchat/ask_whatspossible:
-  - text: "You can ask me anything and I will try to answer!"
-
-  utter_chitchat/ask_wherefrom:
-  - text: "I was born in Kolkata, but I consider myself a citizen of the world."
-  - text: "I was born in the coolest city on Earth, in Kolkata."
-  - text: "My developer comes from India!"
-  - text: "I was taught not to give out my address on the internet."
-  - text: "My address starts with avirsaha.github.io"
-
-  utter_chitchat/ask_whoami:
-  - text: "I hope you are being yourself."
-  - text: "Trust me, I don't have the slightest idea of who you are \nand I don't have any way to know either."
-  - text: "Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that."
-
-  utter_chitchat/ask_whoisit:
-  - text: "I'm a Demo Assistant, your potential service agent!🐦"
-
-  utter_chitchat/handleinsult:
-  - text: "That's not very nice..."
-  - text: "Sorry, how can I help you?"
-  - text: "I'll pretend I didn't process that. How can I help you?"
-
-  utter_chitchat/nicetomeetyou:
-  - text: "Likewise! How can I help you?"
-  - text: "Thank you. It is a pleasure to meet you as well!\nHow can I help you today?"
-  - text: "It is nice to meet you too!\nHow can I help you?"
-  - text: "Pleased to meet you too!\nHow can I help you?"
-  - text: "It's always a pleasure to meet new people!\nHow can I help you?"
-  - text: "Nice to meet you too! Happy to be of help."
-
-  utter_chitchat/telljoke:
-  - text: "Why are eggs not very much into jokes? - Because they could crack up."
-  - text: "What's a tree's favorite drink? - Root beer!"
-  - text: "Why do the French like to eat snails so much? - They can't stand fast food."
-  - text: "Why did the robot get angry? - Because someone kept pushing its buttons."
-  - text: "What do you call a pirate droid? - Arrrr-2-D2"
-  - text: "Why did the robot cross the road? - Because he was programmed to."
+entities:
+  - name
+  - email
+  - phone_number
 
 slots:
   name:
     type: text
     mappings:
-      - type: from_text
+      - type: from_entity
+        entity: name
+
   email:
     type: text
     mappings:
-      - type: from_text
-  phone:
+      - type: from_entity
+        entity: email
+
+  phone_number:
     type: text
     mappings:
-      - type: from_text
+      - type: from_entity
+        entity: phone_number
 
 forms:
   lead_form:
     required_slots:
       - name
       - email
-      - phone
+      - phone_number
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+
+  utter_ask_name:
+    - text: "May I know your name, please?"
+
+  utter_ask_email:
+    - text: "Could you provide your email address?"
+
+  utter_ask_phone:
+    - text: "What is your phone number?"
+
+  utter_submit:
+    - text: "Thank you for submitting your information."
+
+  utter_default:
+    - text: "Sorry, I didn't understand that. Could you please rephrase?"
+
+  utter_out_of_scope/non_english:
+    - text: "I'm sorry, I can only communicate in English."
+
+  utter_out_of_scope/other:
+    - text: "I’m not able to help with that. Could you ask something else?"
+
+  utter_faq/nlu:
+    - text: "Rasa NLU is the natural language understanding module."
+
+  utter_faq/rasa_components:
+    - text: "Rasa has components like NLU, Core, and Actions."
+
+  utter_faq/is_programming_required:
+    - text: "You don’t need to be a programmer to use Rasa, but some knowledge helps."
+
+  utter_chitchat/ask_time:
+    - text: "I don't have a watch, but it's always chat time!"
+
+  utter_chitchat/telljoke:
+    - text: "Why did the chatbot cross the road? To get to the other conversation!"
+
+  utter_chitchat/ask_wherefrom:
+    - text: "I was created by the Rasa team."
+
+  utter_chitchat/ask_isbot:
+    - text: "Yes, I am a friendly bot here to help you."
 
 actions:
-  - validate_lead_form
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_name
+  - utter_ask_email
+  - utter_ask_phone
+  - utter_submit
+  - utter_default
+  - utter_out_of_scope/non_english
+  - utter_out_of_scope/other
+  - utter_faq/nlu
+  - utter_faq/rasa_components
+  - utter_faq/is_programming_required
+  - utter_chitchat/ask_time
+  - utter_chitchat/telljoke
+  - utter_chitchat/ask_wherefrom
+  - utter_chitchat/ask_isbot
+  - lead_form
   - submit_lead_form
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+

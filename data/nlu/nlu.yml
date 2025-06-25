@@ -2,86 +2,121 @@ version: "3.1"
 
 nlu:
 
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - have a nice day
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - correct
 
 - intent: deny
   examples: |
     - no
-    - n
     - never
-    - I don't think so
     - don't like that
-    - no way
-    - not really
+
+- intent: ask_name
+  examples: |
+    - What is your name?
+    - Can I tell you my name?
+    - May I tell you my name?
+
+- intent: ask_email
+  examples: |
+    - Can I give you my email?
+    - I want to share my email address
+
+- intent: ask_phone
+  examples: |
+    - Can I give you my phone number?
+    - Here is my phone number
+
+- intent: provide_info
+  examples: |
+    - My name is John, my email is john@example.com, and my phone is 1234567890
+    - You can call me Alex, alex@example.com, phone 9876543210
+
+- intent: submit
+  examples: |
+    - I want to submit
+    - Submit my info
+    - That's all from me
 
 - intent: mood_great
   examples: |
-    - perfect
     - great
-    - amazing
-    - feeling like a king
     - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - amazing
 
 - intent: mood_unhappy
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
     - sad
-    - very sad
+    - not feeling well
     - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Are you a bot?
+    - Are you human?
 
-- intent: ask_return_policy
+- intent: chitchat/ask_time
   examples: |
-    - can I return something I bought?
-    - what's your exchange policy?
-    - how long do I have to return an item?
-    - is there a restocking fee?
-    - do I need the receipt to return a product?
+    - What time is it?
+    - Can you tell me the time?
 
-- intent: track_order
+- intent: chitchat/telljoke
   examples: |
-    - track my order
-    - where is my package?
-    - order status
+    - Tell me a joke
+    - Can you tell me a joke?
 
-- intent: product_inquiry
+- intent: chitchat/ask_wherefrom
   examples: |
-    - I'm looking for a gaming laptop
-    - do you sell wireless earbuds?
-    - can you show me something under $500?
-    - what specs does the iPhone 14 have?
-    - which product is best for photographers?
+    - Where are you from?
+    - Who built you?
 
-- intent: ask_discount
+- intent: chitchat/ask_isbot
   examples: |
-    - are there any deals?
-    - do you have discounts?
-    - any current offers?
+    - Are you a bot?
+    - Are you a chatbot?
 
-- intent: provide_contact_info
+- intent: faq/nlu
   examples: |
-    - my name is John Doe, email john@example.com and phone 1234567890
+    - What is NLU?
+    - Explain NLU
+
+- intent: faq/rasa_components
+  examples: |
+    - What are Rasa components?
+    - Tell me about Rasa components
+
+- intent: faq/is_programming_required
+  examples: |
+    - Is programming required?
+    - Do I need to code?
+
+- intent: out_of_scope/non_english
+  examples: |
+    - Hola
+    - Bonjour
+
+- intent: out_of_scope/other
+  examples: |
+    - What's the weather?
+    - Tell me a story
+
