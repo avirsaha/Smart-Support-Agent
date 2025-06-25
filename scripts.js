@@ -17,6 +17,7 @@ function appendMessage(content, sender = "user") {
   // Set color based on sender
   if (sender === "user") {
     timestamp.style.color = "white";
+     wrapper.classList.add("pending-reply");
   }
 
   timestamp.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -70,6 +71,11 @@ sendBtn.addEventListener("click", async () => {
       data.forEach((item) => {
         appendMessage(item.text || "(no text)", "bot");
       });
+      // Remove glow from last pending user message
+const pendingMessages = document.querySelectorAll('.message.user.pending-reply');
+if (pendingMessages.length) {
+  pendingMessages[pendingMessages.length - 1].classList.remove('pending-reply');
+}
     }
   } catch (err) {
     removeTypingIndicator();
@@ -130,5 +136,19 @@ Hire me on 👉 <a href="" target="_blank">Fiverr</a> | <a href="" target="_blan
 💬 Type a message to get started.
 ` 
   chatBox.appendChild(startMsg);
+});
+
+// Scroll to latest chat button logic
+const scrollButton = document.getElementById("scroll-to-latest");
+
+// Toggle button visibility when user scrolls up
+chatBox.addEventListener("scroll", () => {
+  const nearBottom = chatBox.scrollHeight - chatBox.scrollTop <= chatBox.clientHeight + 20;
+  scrollButton.style.display = nearBottom ? "none" : "block";
+});
+
+// Scroll to bottom when clicked
+scrollButton.addEventListener("click", () => {
+  chatBox.scrollTop = chatBox.scrollHeight;
 });
 

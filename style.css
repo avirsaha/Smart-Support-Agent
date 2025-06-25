@@ -210,4 +210,49 @@ body {
 .github-badge img:hover {
   transform: scale(1.05);
 }
+.scroll-button {
+  display: none;
+  position: absolute;
+  right: 20px;
+  bottom: 100px; /* Adjust if needed */
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+  animation: glow 1.5s infinite alternate;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.scroll-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+/* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+  }
+}
+.message.user.pending-reply {
+  animation: glow-pending 1.5s infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+@keyframes glow-pending {
+  0% {
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+  }
+}
 
