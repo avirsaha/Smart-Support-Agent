@@ -3,4 +3,6 @@ __pycache__/
 *.pyo
 .venv/
 .env
-
+.backup/
+.rasa/
+models/
