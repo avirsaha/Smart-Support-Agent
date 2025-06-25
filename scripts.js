@@ -110,4 +110,21 @@ window.addEventListener("load", () => {
   checkRasaStatus();
   setInterval(checkRasaStatus, 30000);
 });
+window.addEventListener('DOMContentLoaded', () => {
+  const chatBox = document.getElementById('chat-box');
+
+  const startMsg = document.createElement('div');
+  startMsg.className = 'bot-message start-message';
+  startMsg.innerHTML = `
+    <strong>👋 Welcome!</strong><br />
+    You're chatting with a demo AI agent for a fictional e-commerce brand.<br /><br />
+    This bot is part of my freelancing work — need a custom NLP bot for your business?<br /><br />
+    👉 <a href="https://www.fiverr.com/yourprofile" target="_blank">Fiverr</a> | 
+    <a href="https://www.upwork.com/freelancers/~yourprofile" target="_blank">Upwork</a><br />
+    🔧 <a href="https://github.com/yourgithub" target="_blank">GitHub</a><br /><br />
+    💬 Type a message to get started.
+  ` 
+  
+  chatBox.appendChild(startMsg);
+});
 
