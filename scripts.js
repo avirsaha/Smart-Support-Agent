@@ -122,6 +122,32 @@ window.addEventListener('DOMContentLoaded', () => {
   const startMsg = document.createElement('div');
   startMsg.className = 'bot-message start-message';
   startMsg.innerHTML = `
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<h1 style="margin: 0 0 10px 0; font-size: 30px; text-align: left;"><strong>👋 Welcome!</strong></h1>
+This is a demo AI agent for a fictional e-commerce brand.<br><br>
+
+📢 Follow me on: 
+<br>
+<a href="https://x.com/lemorymeak" target="_blank" style="margin-right: 10px;">
+  <i class="fab fa-x-twitter"> </i>
+</a>
+<a href="https://linkedin.com/in/aviraj-saha-ai" target="_blank" style="margin-right: 10px;">
+  <i class="fab fa-linkedin"> </i>
+</a>
+<a href="https://github.com/avirsaha" target="_blank">
+  <i class="fab fa-github"></i>
+</a>
+<br><br>
+
+📂 Features & custom options: <a href="https://github.com/avirsaha/smart-agent/" target="_blank">GitHub</a><br>
+🤖 Works with WhatsApp, Insta, Telegram, Slack, Discord & more.<br>
+💻 Easy to integrate into any site or app.<br><br>
+📧 <a href="mailto:aviraj.saha@outlook.com">aviraj.saha@outlook.com</a><br>
+📞 <a href="tel:+918335827412">+91 83358 27412</a><br><br>
+💬 Type a message to get started.
+
+` 
+/*
 <h1 style="margin: 0 0 10px 0; font-size: 30px; text-align: left;"><strong>👋 Welcome!</strong></h1>
 This is a demo AI agent for a fictional e-commerce brand.<br><br>
 
@@ -134,7 +160,7 @@ Hire me on 👉 <a href="" target="_blank">Fiverr</a> | <a href="" target="_blan
 📧 <a href="mailto:aviraj.saha@outlook.com">aviraj.saha@outlook.com</a><br>
 📞 <a href="tel:+918335827412">+91 83358 27412</a><br><br>
 💬 Type a message to get started.
-` 
+*/
   chatBox.appendChild(startMsg);
 });
 
