@@ -2,120 +2,94 @@ version: "3.1"
 
 intents:
   - greet
+  - ask_return_policy
+  - ask_shipping_policy
+  - ask_warranty
+  - check_stock
+  - check_offer
+  - ask_available_products
+  - recommend_product
+  - positive_feedback
+  - negative_feedback
+  - thank_you
   - goodbye
-  - ask_name
-  - ask_email
-  - ask_phone
-  - provide_info
-  - submit
+  - utter_recommend_product
   - nlu_fallback
-  - out_of_scope/non_english
-  - out_of_scope/other
-  - faq/nlu
-  - faq/rasa_components
-  - faq/is_programming_required
-  - chitchat/ask_time
-  - chitchat/telljoke
-  - chitchat/ask_wherefrom
-  - chitchat/ask_isbot
+  - session_start
 
 entities:
-  - name
-  - email
-  - phone_number
-
-slots:
-  name:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: name
-
-  email:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: email
-
-  phone_number:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: phone_number
-
-forms:
-  lead_form:
-    required_slots:
-      - name
-      - email
-      - phone_number
+  - product
+  - category
+  - policy_type
 
 responses:
-  utter_greet:
-    - text: "Hello! How can I assist you today?"
-
-  utter_goodbye:
-    - text: "Goodbye! Have a great day!"
-
-  utter_ask_name:
-    - text: "May I know your name, please?"
-
-  utter_ask_email:
-    - text: "Could you provide your email address?"
-
-  utter_ask_phone:
-    - text: "What is your phone number?"
-
-  utter_submit:
-    - text: "Thank you for submitting your information."
 
   utter_default:
-    - text: "Sorry, I didn't understand that. Could you please rephrase?"
+    - text: "I'm sorry, I didn't quite get that. Could you please rephrase?"
 
-  utter_out_of_scope/non_english:
-    - text: "I'm sorry, I can only communicate in English."
+  utter_greet:
+    - text: "Hello! How can I assist you with your shopping today?"
+    - text: "Hi there! What can I help you find today?"
+    - text: "Hey! Need any help with products or orders?"
+    - text: "Greetings! How can I make your shopping easier?"
+    - text: "Hi! What are you looking for today?"
+    - text: "Hello! Ready to find something great?"
+    - text: "Hey there! How can I assist you?"
+    - text: "Good to see you! How can I help today?"
 
-  utter_out_of_scope/other:
-    - text: "I’m not able to help with that. Could you ask something else?"
+  utter_thank_you:
+    - text: "You’re welcome! If you need anything else, just ask."
+    - text: "Glad to help! Feel free to ask if you have more questions."
+    - text: "Anytime! Let me know if you need further assistance."
+    - text: "Happy to assist! Reach out anytime."
+    - text: "My pleasure! I'm here whenever you need me."
+    - text: "No problem! Let me know if there’s anything else."
+    - text: "You got it! Just ask if you need more help."
 
-  utter_faq/nlu:
-    - text: "Rasa NLU is the natural language understanding module."
+  utter_goodbye:
+    - text: "Goodbye! Have a wonderful day ahead."
+    - text: "See you later! Take care."
+    - text: "Thanks for chatting! Have a great day."
+    - text: "Bye for now! Hope to talk again soon."
+    - text: "Catch you later! Stay safe."
+    - text: "Take care! Looking forward to our next chat."
+    - text: "Farewell! Let me know if you need anything else."
 
-  utter_faq/rasa_components:
-    - text: "Rasa has components like NLU, Core, and Actions."
+slots:
+  product:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product
+      - type: from_text
 
-  utter_faq/is_programming_required:
-    - text: "You don’t need to be a programmer to use Rasa, but some knowledge helps."
+  category:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category
+      - type: from_text
 
-  utter_chitchat/ask_time:
-    - text: "I don't have a watch, but it's always chat time!"
+  feedback:
+    type: text
+    mappings:
+      - type: from_text
 
-  utter_chitchat/telljoke:
-    - text: "Why did the chatbot cross the road? To get to the other conversation!"
-
-  utter_chitchat/ask_wherefrom:
-    - text: "I was created by the Rasa team."
-
-  utter_chitchat/ask_isbot:
-    - text: "Yes, I am a friendly bot here to help you."
+  policy_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: policy_type
 
 actions:
-  - utter_greet
-  - utter_goodbye
-  - utter_ask_name
-  - utter_ask_email
-  - utter_ask_phone
-  - utter_submit
-  - utter_default
-  - utter_out_of_scope/non_english
-  - utter_out_of_scope/other
-  - utter_faq/nlu
-  - utter_faq/rasa_components
-  - utter_faq/is_programming_required
-  - utter_chitchat/ask_time
-  - utter_chitchat/telljoke
-  - utter_chitchat/ask_wherefrom
-  - utter_chitchat/ask_isbot
-  - lead_form
-  - submit_lead_form
+  - action_check_stock
+  - action_check_offer
+  - action_ask_available_products
+  - action_recommend_product
+  - action_submit_feedback
+  - action_show_policy
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 

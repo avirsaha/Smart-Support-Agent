@@ -2,53 +2,28 @@ version: "3.1"
 
 rules:
 
-- rule: greet the user
+# Greet → Greet response
+- rule: Say hello
   steps:
-  - intent: greet
-  - action: utter_greet
+    - intent: greet
+    - action: utter_greet
 
-- rule: say goodbye
+# Goodbye → Goodbye response
+- rule: Say goodbye
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: goodbye
+    - action: utter_goodbye
 
-- rule: ask for name
+# Custom fallback
+- rule: Fallback if intent is not recognized
   steps:
-  - intent: ask_name
-  - action: utter_ask_name
+    - intent: nlu_fallback
+    - action: utter_default
 
-- rule: ask for email
+# React to session start (optional)
+- rule: Handle session start
   steps:
-  - intent: ask_email
-  - action: utter_ask_email
-
-- rule: ask for phone
-  steps:
-  - intent: ask_phone
-  - action: utter_ask_phone
-
-- rule: submit user information
-  steps:
-  - intent: submit
-  - action: utter_submit
-
-- rule: activate lead form
-  steps:
-  - intent: provide_info
-  - action: lead_form
-  - active_loop: lead_form
-
-- rule: submit lead form
-  steps:
-  - active_loop: lead_form
-  - action: lead_form
-  - active_loop: null
-  - action: submit_lead_form
-
-- rule: handle unexpected input
-  condition:
-  - active_loop: null
-  steps:
-  - intent: nlu_fallback
-  - action: utter_default
+    - intent: session_start
+    - action: action_session_start
+    - action: utter_greet
 

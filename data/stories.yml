@@ -2,77 +2,182 @@ version: "3.1"
 
 stories:
 
-- story: greet and ask name
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_name
-  - action: utter_ask_name
+# --- GREETING & EXPLORATION ---
 
-- story: goodbye
+- story: greet and explore products
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_available_products
+    - action: action_ask_available_products
 
-- story: lead generation via form
+- story: greet and ask for recommendations
   steps:
-  - intent: provide_info
-  - action: lead_form
-  - active_loop: lead_form
+    - intent: greet
+    - action: utter_greet
+    - intent: recommend_product
+    - action: action_recommend_product
 
-- story: lead form submission
+- story: greet then policy questions
   steps:
-  - action: lead_form
-  - active_loop: null
-  - action: submit_lead_form
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_return_policy
+    - action: action_show_policy
+    - intent: ask_shipping_policy
+    - action: action_show_policy
+    - intent: ask_warranty
+    - action: action_show_policy
 
-- story: handle non-English input
-  steps:
-  - intent: out_of_scope/non_english
-  - action: utter_out_of_scope/non_english
+# --- PRODUCT DISCOVERY ---
 
-- story: handle irrelevant queries
+- story: ask products then recommend
   steps:
-  - intent: out_of_scope/other
-  - action: utter_out_of_scope/other
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: recommend_product
+    - action: action_recommend_product
 
-- story: answer NLU FAQ
+- story: recommend followed by stock and offer check
   steps:
-  - intent: faq/nlu
-  - action: utter_faq/nlu
+    - intent: recommend_product
+    - action: action_recommend_product
+    - intent: check_stock
+    - action: action_check_stock
+    - intent: check_offer
+    - action: action_check_offer
 
-- story: answer Rasa Components FAQ
+- story: ask product then check offer and stock
   steps:
-  - intent: faq/rasa_components
-  - action: utter_faq/rasa_components
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: check_stock
+    - action: action_check_stock
 
-- story: answer programming required FAQ
+- story: check offer first then recommend
   steps:
-  - intent: faq/is_programming_required
-  - action: utter_faq/is_programming_required
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: recommend_product
+    - action: action_recommend_product
 
-- story: chitchat about time
+- story: user checks offer then stock
   steps:
-  - intent: chitchat/ask_time
-  - action: utter_chitchat/ask_time
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: check_stock
+    - action: action_check_stock
 
-- story: chitchat joke
-  steps:
-  - intent: chitchat/telljoke
-  - action: utter_chitchat/telljoke
+# --- POLICY INQUIRIES ---
 
-- story: chitchat bot origin
+- story: ask return policy
   steps:
-  - intent: chitchat/ask_wherefrom
-  - action: utter_chitchat/ask_wherefrom
+    - intent: ask_return_policy
+    - action: action_show_policy
 
-- story: chitchat bot identity
+- story: ask shipping policy
   steps:
-  - intent: chitchat/ask_isbot
-  - action: utter_chitchat/ask_isbot
+    - intent: ask_shipping_policy
+    - action: action_show_policy
 
-- story: handle fallback
+- story: ask warranty policy
   steps:
-  - intent: nlu_fallback
-  - action: utter_default
+    - intent: ask_warranty
+    - action: action_show_policy
+
+- story: ask all policies without greeting
+  steps:
+    - intent: ask_return_policy
+    - action: action_show_policy
+    - intent: ask_shipping_policy
+    - action: action_show_policy
+    - intent: ask_warranty
+    - action: action_show_policy
+
+- story: ask product then policy
+  steps:
+    - intent: recommend_product
+    - action: action_recommend_product
+    - intent: ask_return_policy
+    - action: action_show_policy
+
+- story: ask available products then policy
+  steps:
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: ask_shipping_policy
+    - action: action_show_policy
+
+# --- FEEDBACK & THANKS ---
+
+- story: positive feedback flow
+  steps:
+    - intent: positive_feedback
+    - action: action_submit_feedback
+    - intent: thank_you
+    - action: utter_thank_you
+
+- story: negative feedback and exit
+  steps:
+    - intent: negative_feedback
+    - action: action_submit_feedback
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: thank you before asking
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+    - intent: recommend_product
+    - action: action_recommend_product
+
+- story: feedback then ask for products
+  steps:
+    - intent: positive_feedback
+    - action: action_submit_feedback
+    - intent: ask_available_products
+    - action: action_ask_available_products
+
+- story: feedback then ask offers
+  steps:
+    - intent: positive_feedback
+    - action: action_submit_feedback
+    - intent: check_offer
+    - action: action_check_offer
+
+# --- SIMPLE CONVERSATIONS ---
+
+- story: direct goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: start with thank you and exit
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: full flow without greeting
+  steps:
+    - intent: recommend_product
+    - action: action_recommend_product
+    - intent: ask_return_policy
+    - action: action_show_policy
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: thank_you
+    - action: utter_thank_you
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet then exit
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
 
