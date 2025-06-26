@@ -79,9 +79,12 @@ if (pendingMessages.length) {
     }
   } catch (err) {
     removeTypingIndicator();
-    appendMessage("❌ ERROR connecting to server!\n Bot maybe offline", "bot");
+    appendMessage(`⚠️ ERROR:
+    Agent temporarily unavailable. This may be due to server downtime, network or tunnel interruption, or the agent undergoing maintenance. Please try again later.
+
+    If the issue persists for an unusually long time or you'd like to report a bug, feel free to contact me via the email provided above.`, "bot");
+    }
     console.error(err);
-  }
 });
 
 // Send on Enter key
