@@ -53,13 +53,13 @@ docker run --rm -p 5005:5005 custom-chatbot
 
 
 
-## 📞 Interested in a Custom Chatbot for Your Business?
+[comment]: <> (## 📞 Interested in a Custom Chatbot for Your Business?)
 
-This project is part of my freelancing portfolio. If you'd like a tailored AI chatbot to meet your unique business needs, especially for e-commerce, SaaS, or service companies, please reach out!
+[comment]: <> (This project is part of my freelancing portfolio. If you'd like a tailored AI chatbot to meet your unique business needs, especially for e-commerce, SaaS, or service companies, please reach out!)
 
-* 💼 [Fiverr Profile](#)
-* 💼 [Upwork Profile](#)
-* 📬 Or email: aviraj.saha@outlook.com, +91 8335827412
+[comment]: <> (* 💼 [Fiverr Profile])
+[comment]: <> (* 💼 [Upwork Profile])
+[comment]: <> (* 📬 Or email: aviraj.saha@outlook.com, +91 8335827412)
 
 
 
