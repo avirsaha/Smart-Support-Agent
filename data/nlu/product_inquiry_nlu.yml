@@ -1,0 +1,27 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: ask_available_products
+  examples: |
+    - What do you sell?
+    - What electronics do you have?
+    - Can I see your catalog?
+    - What's in your store right now?
+    - What can I buy here?
+    - I want to browse your tech stuff
+    - Show me your products
+    - Got a product list?
+    - Which electronics do you stock?
+    - Can you list your items?
+    - What gadgets do you sell?
+    - I want to explore products
+    - What items are available today?
+    - What’s in stock right now?
+    - Do you sell smartphones?
+    - Let me see your electronics
+    - Any featured items?
+    - Show me the product categories
+    - Are there items for sale now?
+    - What's your inventory?

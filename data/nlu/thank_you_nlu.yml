@@ -1,0 +1,22 @@
+version: "3.1"
+
+nlu:
+
+- intent: thank_you
+  examples: |
+    - thanks!
+    - appreciate it
+    - many thanks
+    - thank you very much 🙏
+    - really helpful
+    - you’re the best
+    - that’s great, thanks!
+    - thanks for helping out
+    - super grateful
+    - lifesaver!
+    - cheers!
+    - 🙌 thanks
+    - 💯 appreciated
+    - cool, thank you
+    - all set, thanks!
+

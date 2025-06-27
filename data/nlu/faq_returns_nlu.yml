@@ -1,0 +1,27 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: ask_return_policy
+  examples: |
+    - Can I return this?
+    - What's your return window?
+    - How do I return something?
+    - Can I return if it’s not working?
+    - What’s your policy on returns?
+    - What happens if I don’t like the product?
+    - Can I get a refund?
+    - Is there a return option?
+    - Can I return an opened box?
+    - How does returning work?
+    - I want to send something back
+    - What's the return time limit?
+    - Is return shipping free?
+    - Return instructions please
+    - Do I need a receipt for returns?
+    - Can I return tech stuff?
+    - What’s your refund timeline?
+    - What if I get a defective item?
+    - Is there any restocking fee?
+    - Can I exchange instead?

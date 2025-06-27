@@ -1,0 +1,18 @@
+version: "3.1"
+
+stories:
+
+- story: ask all policies after recommendation
+  steps:
+    - intent: recommend_product
+    - action: action_recommend_product
+    - intent: ask_return_policy
+    - action: action_show_policy
+
+- story: ask available products then policy
+  steps:
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: ask_shipping_policy
+    - action: action_show_policy
+

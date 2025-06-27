@@ -1,0 +1,23 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: positive_feedback
+  examples: |
+    - This is awesome!
+    - Love it
+    - Perfect
+    - Exactly what I needed
+    - You nailed it 👌
+    - That’s helpful
+    - I'm impressed!
+    - Good work
+    - Very nice
+    - Looks great
+    - 🔥 this is great
+    - That’s amazing
+    - Totally satisfied
+    - 10/10 response
+    - Couldn’t be better
+

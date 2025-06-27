@@ -1,0 +1,39 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hi
+    - hey
+    - hello
+    - hi there
+    - hello there 👋
+    - good morning
+    - hey team
+    - sup
+    - yooo
+    - what’s up
+    - anyone here?
+    - can we talk?
+    - hi! need help
+    - hello support
+    - hey, is this the shop?
+    - hi, is this [ShopName]?
+    - yo, I need some info
+    - hey assistant
+    - hi bot 👋
+    - good day to you
+    - quick question!
+    - can I get some help here?
+    - someone there?
+    - need to chat
+    - hellooo anyone?
+    - starting chat now
+    - hello? you there?
+    - 🙋‍♂️ hi
+    - 👋 hey
+    - greetings
+    - yo
+    - hey hey
+    - hi, electronics support?

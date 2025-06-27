@@ -1,0 +1,25 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: check_stock
+  examples: |
+    - Is [iPhone 14](product) in stock?
+    - Do you have [MacBook Air](product)?
+    - Is [Samsung S23](product) available?
+    - Any [wireless chargers](category) in stock?
+    - Is the [PlayStation 5](product) sold out?
+    - Can I order the [Apple Watch SE](product) today?
+    - When will [gaming laptops](category) be restocked?
+    - Are you out of [headphones](category)?
+    - Do you have [HD monitors](category)?
+    - Is [Logitech MX Master 3](product) available right now?
+    - Is the [Asus ROG Ally](product) back?
+    - Stock check for [Xiaomi earbuds](product)
+    - Are [Android tablets](category) available?
+    - What’s your stock status on [home speakers](category)?
+    - Is the [HP Pavilion](product) still in?
+    - Availability for [Bluetooth keyboards](category)?
+    - How many units of [Dell XPS](product) do you have?
+    - Got anything in the [drone](category) section?

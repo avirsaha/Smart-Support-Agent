@@ -1,0 +1,43 @@
+version: "3.1"
+
+stories:
+
+- story: ask products then recommend
+  steps:
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: recommend_product
+    - action: action_recommend_product
+
+- story: recommend followed by stock and offer check
+  steps:
+    - intent: recommend_product
+    - action: action_recommend_product
+    - intent: check_stock
+    - action: action_check_stock
+    - intent: check_offer
+    - action: action_check_offer
+
+- story: ask product then check offer and stock
+  steps:
+    - intent: ask_available_products
+    - action: action_ask_available_products
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: check_stock
+    - action: action_check_stock
+
+- story: check offer first then recommend
+  steps:
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: recommend_product
+    - action: action_recommend_product
+
+- story: user checks offer then stock
+  steps:
+    - intent: check_offer
+    - action: action_check_offer
+    - intent: check_stock
+    - action: action_check_stock
+

@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+
+- story: greet and explore products
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_available_products
+    - action: action_ask_available_products
+
+- story: greet and ask for recommendations
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recommend_product
+    - action: action_recommend_product
+
+- story: greet then policy questions
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_return_policy
+    - action: action_show_policy
+    - intent: ask_shipping_policy
+    - action: action_show_policy
+    - intent: ask_warranty
+    - action: action_show_policy
+
+- story: Greet then exit
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Positive feedback and goodbye
+  steps:
+    - intent: positive_feedback
+    - action: action_submit_feedback
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Negative feedback and goodbye
+  steps:
+    - intent: negative_feedback
+    - action: action_submit_feedback
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Thank you then recommend
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+    - intent: recommend_product
+    - action: action_recommend_product
+

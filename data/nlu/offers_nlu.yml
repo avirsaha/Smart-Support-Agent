@@ -1,0 +1,21 @@
+version: "3.1"
+nlu:
+- intent: check_offer
+  examples: |
+    - Any discounts today?
+    - Got any deals on [phones](category)?
+    - Any sales running now?
+    - What are the current offers?
+    - Is [MacBook Pro](product) on sale?
+    - Are there weekend deals?
+    - Promo code available?
+    - Can I get a discount?
+    - Do you offer student discounts?
+    - Is there a deal on [headphones](category)?
+    - Any bundle offers?
+    - Flash sale info please
+    - What’s your best price?
+    - Any cashback options?
+    - Do you run seasonal offers?
+    - Is there a price drop on [smartwatches](category)?
+    - Loyalty discount available?

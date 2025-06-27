@@ -1,0 +1,24 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: ask_shipping_policy
+  examples: |
+    - How fast is delivery?
+    - When will I get my order?
+    - What’s your shipping time?
+    - Do you offer same-day shipping?
+    - How much is shipping?
+    - Is there a free delivery option?
+    - Which courier do you use?
+    - Do you deliver on weekends?
+    - Can I track my order?
+    - How do you handle delays?
+    - Do you ship nationwide?
+    - Can I change my shipping address?
+    - What’s the shipping fee?
+    - Any express options?
+    - How long does it take to ship a [laptop](category)?
+    - Do you offer pickup options?
+    - Delivery details please

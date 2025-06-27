@@ -1,0 +1,29 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - later!
+    - see ya
+    - catch you later
+    - peace out
+    - thank you and bye
+    - that’s all for now
+    - I’m done here
+    - talk later
+    - appreciate the help, bye
+    - cya!
+    - 👋
+    - ✌️
+    - take care
+    - I'm off
+    - logging out
+    - that’ll be it
+    - wrapping up
+    - thanks and take care
+    - all set, bye!
+    - cheers, bye

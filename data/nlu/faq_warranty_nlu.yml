@@ -1,0 +1,23 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: ask_warranty
+  examples: |
+    - What’s the warranty on this?
+    - Is there a guarantee?
+    - How long is the warranty period?
+    - Warranty policy please
+    - Is this under warranty?
+    - What’s covered in the warranty?
+    - Can I claim warranty online?
+    - Is there accidental coverage?
+    - How to activate warranty?
+    - What’s not included in the warranty?
+    - Do refurbished products have warranty?
+    - Can I extend the warranty?
+    - How do I get a replacement under warranty?
+    - Does the warranty cover water damage?
+    - Do I need to register the product?
+

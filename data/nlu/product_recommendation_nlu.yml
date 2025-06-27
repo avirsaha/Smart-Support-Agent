@@ -1,0 +1,55 @@
+
+version: "3.1"
+
+nlu:
+
+- intent: recommend_product
+  examples: |
+    - I want a [laptop](category) with [long battery](battery_life)
+    - Looking for a [smartphone](category) with [excellent camera](camera_quality)
+    - Show me a [tablet](category) that has a [bright display](display_quality)
+    - Recommend a [phone](category) with [high performance](performance)
+    - I want a [gaming laptop](category) with [fast processor](performance)
+    - Need a [smartwatch](category) with [good battery](battery_life)
+    - I'm looking for a [phone](category) under [500 dollars](price_range)
+    - Suggest a [headphone](category) in [black](color)
+    - I want a [phone](category) with [128GB storage](storage)
+    - Can you recommend a [laptop](category) with [great battery life](battery_life)?
+    - Please show me [smartphones](category) with [amazing camera](camera_quality)
+    - I want to buy a [tablet](category) that has a [sharp display](display_quality)
+    - Looking for a [phone](category) with [powerful performance](performance)
+    - Need a [gaming laptop](category) with [high speed processor](performance)
+    - I want a [smartwatch](category) that lasts long on battery
+    - Suggest me a [phone](category) priced below [15,000](price_range)
+    - Show me [headphones](category) available in [blue](color)
+    - I'm interested in a [phone](category) with [64GB storage](storage)
+    - I want to buy a [laptop](category) with [good display](display_quality)
+    - Can you suggest a [smartphone](category) with [fast charging](performance)?
+    - Looking for a [tablet](category) with [bright screen](display_quality)
+    - I need a [phone](category) that has a [strong battery](battery_life)
+    - Recommend a [gaming laptop](category) that is [budget friendly](price_range)
+    - Show me [smartwatches](category) with [long battery life](battery_life)
+    - I want a [phone](category) with [awesome camera quality](camera_quality)
+    - Suggest a [headphone](category) with [noise cancellation](performance)
+    - I'm searching for a [phone](category) within a budget of [20,000](price_range)
+    - I want to buy a [laptop](category) with [good RAM](performance)
+    - Need a [smartphone](category) in [white](color)
+    - Show me [tablets](category) with [large storage](storage)
+    - Recommend a [phone](category) suitable for [gaming](performance)
+    - I want a [headphone](category) with [great sound quality](performance)
+    - Suggest a [smartwatch](category) that's water resistant
+    - I'm looking for a [phone](category) with a [clear display](display_quality)
+    - Can you recommend a [laptop](category) with [backlit keyboard] (feature)?
+    - I want to buy a [phone](category) that is [budget friendly](price_range)
+    - Show me [headphones](category) with [wireless connectivity](feature)
+    - Suggest a [smartphone](category) with [dual SIM](feature)
+    - Looking for a [phone](category) with [good battery backup](battery_life)
+    - I want a [gaming laptop](category) with [RGB keyboard](feature)
+    - Recommend a [phone](category) with [fast processor](performance) and [good camera](camera_quality)
+    - Can you suggest a [smartwatch](category) with [heart rate monitor] (feature)?
+    - Show me a [tablet](category) with [stylus support](feature)
+    - I want a [phone](category) in [red](color)
+    - Need a [headphone](category) with [bass boost](performance)
+    - Looking for a [phone](category) with [good network connectivity](feature)
+    - Suggest a [laptop](category) with [SSD storage](storage)
+

@@ -13,47 +13,21 @@ intents:
   - negative_feedback
   - thank_you
   - goodbye
-  - utter_recommend_product
   - nlu_fallback
   - session_start
 
 entities:
   - product
   - category
+  - brand
+  - battery_life
+  - camera_quality
+  - display_quality
+  - performance
+  - price_range
+  - storage
+  - color
   - policy_type
-
-responses:
-
-  utter_default:
-    - text: "I'm sorry, I didn't quite get that. Could you please rephrase?"
-
-  utter_greet:
-    - text: "Hello! How can I assist you with your shopping today?"
-    - text: "Hi there! What can I help you find today?"
-    - text: "Hey! Need any help with products or orders?"
-    - text: "Greetings! How can I make your shopping easier?"
-    - text: "Hi! What are you looking for today?"
-    - text: "Hello! Ready to find something great?"
-    - text: "Hey there! How can I assist you?"
-    - text: "Good to see you! How can I help today?"
-
-  utter_thank_you:
-    - text: "You’re welcome! If you need anything else, just ask."
-    - text: "Glad to help! Feel free to ask if you have more questions."
-    - text: "Anytime! Let me know if you need further assistance."
-    - text: "Happy to assist! Reach out anytime."
-    - text: "My pleasure! I'm here whenever you need me."
-    - text: "No problem! Let me know if there’s anything else."
-    - text: "You got it! Just ask if you need more help."
-
-  utter_goodbye:
-    - text: "Goodbye! Have a wonderful day ahead."
-    - text: "See you later! Take care."
-    - text: "Thanks for chatting! Have a great day."
-    - text: "Bye for now! Hope to talk again soon."
-    - text: "Catch you later! Stay safe."
-    - text: "Take care! Looking forward to our next chat."
-    - text: "Farewell! Let me know if you need anything else."
 
 slots:
   product:
@@ -81,6 +55,54 @@ slots:
       - type: from_entity
         entity: policy_type
 
+responses:
+
+  utter_greet:
+    - text: "Hello! How can I assist you with your shopping today?"
+    - text: "Hi there! What can I help you find today?"
+    - text: "Hey! Need any help with products or orders?"
+    - text: "Greetings! How can I make your shopping easier?"
+    - text: "Hi! What are you looking for today?"
+    - text: "Hello! Ready to find something great?"
+    - text: "Hey there! How can I assist you?"
+
+  utter_thank_you:
+    - text: "You're welcome! Let me know if you need anything else."
+    - text: "Glad to help! Just ask if you need more."
+    - text: "My pleasure. Reach out anytime!"
+    - text: "No problem! I'm here if you need me."
+    - text: "You're most welcome!"
+    - text: "Always happy to help!"
+    - text: "Sure thing! Let me know if anything else comes up."
+
+  utter_goodbye:
+    - text: "Goodbye! Have a wonderful day ahead."
+    - text: "See you later! Take care."
+    - text: "Thanks for chatting! Have a great day."
+    - text: "Bye for now! Hope to talk again soon."
+    - text: "Catch you later! Stay safe."
+    - text: "Take care! Looking forward to our next chat."
+    - text: "Farewell! Let me know if you need anything else."
+
+  utter_positive_feedback:
+    - text: "I'm glad I could help! 😊"
+    - text: "Thanks! Happy to assist."
+    - text: "Awesome! Let me know if you need anything else."
+    - text: "Thanks for the kind words!"
+    - text: "That’s great to hear—thank you!"
+    - text: "Glad everything worked out!"
+    - text: "Appreciate your feedback!"
+
+  utter_negative_feedback:
+    - text: "I’m sorry about that. I’ll try to do better."
+    - text: "Thanks for the feedback—I’ll work on improving."
+    - text: "Apologies if I wasn’t helpful. Let’s try again?"
+    - text: "I appreciate the honesty. Let me improve."
+    - text: "That’s helpful feedback—thank you."
+    - text: "Sorry! I’ll aim to make it right."
+    - text: "Thanks for letting me know. Let’s fix it together."
+
+
 actions:
   - action_check_stock
   - action_check_offer
@@ -88,8 +110,8 @@ actions:
   - action_recommend_product
   - action_submit_feedback
   - action_show_policy
+  - action_fallback_to_transformer
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
