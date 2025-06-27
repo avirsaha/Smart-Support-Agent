@@ -9,15 +9,20 @@ function appendMessage(content, sender = "user") {
   wrapper.classList.add("message", sender);
 
   const text = document.createElement("div");
-  text.innerText = content;
+
+  if (sender === "bot") {
+    // Sanitize parsed markdown HTML
+    text.innerHTML = DOMPurify.sanitize(marked.parse(content));
+  } else {
+    text.innerText = content;
+  }
 
   const timestamp = document.createElement("div");
   timestamp.classList.add("timestamp");
 
-  // Set color based on sender
   if (sender === "user") {
     timestamp.style.color = "white";
-     wrapper.classList.add("pending-reply");
+    wrapper.classList.add("pending-reply");
   }
 
   timestamp.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
