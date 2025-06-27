@@ -2,7 +2,7 @@ const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 
-const RASA_ENDPOINT = "https://e4dd-103-218-171-102.ngrok-free.app/webhooks/rest/webhook";
+const RASA_ENDPOINT = "https://23cb-103-218-171-102.ngrok-free.app/webhooks/rest/webhook";
 
 function appendMessage(content, sender = "user") {
   const wrapper = document.createElement("div");
@@ -92,7 +92,7 @@ userInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") sendBtn.click();
 });
 
-const RASA_STATUS_ENDPOINT = "https://e4dd-103-218-171-102.ngrok-free.app/status";
+const RASA_STATUS_ENDPOINT = "https://23cb-103-218-171-102.ngrok-free.app/status";
 
 async function checkRasaStatus() {
   const statusDiv = document.querySelector('.status');
